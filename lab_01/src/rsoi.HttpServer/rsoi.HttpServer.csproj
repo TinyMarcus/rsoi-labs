@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>rsoi</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.2" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Database\rsoi.Database.NpgsqlContext\rsoi.Database.NpgsqlContext.csproj" />
+      <ProjectReference Include="..\Database\rsoi.Database.Repositories\rsoi.Database.Repositories.csproj" />
+      <ProjectReference Include="..\rsoi.Core\rsoi.Core.csproj" />
+      <ProjectReference Include="..\rsoi.Dto.Http\rsoi.Dto.Http.csproj" />
+    </ItemGroup>
+
+</Project>

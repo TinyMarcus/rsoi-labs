@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reservation-service
+  labels:
+    app.kubernetes.io/name: reservation-service
+spec:
+  selector:
+    app.kubernetes.io/name: reservation-service
+    app.kubernetes.io/version: "v1.0"
+  ports:
+    - name: reservation-service
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reservation-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: reservation-service
+      app.kubernetes.io/version: "v1.0"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: reservation-service
+        app.kubernetes.io/version: "v1.0"
+    spec:
+      containers:
+        - name: reservation-service
+          image: ilyasov9999/reservation-service:v1.1
+          ports:
+            - name: reservation
+              containerPort: 80
+              protocol: TCP

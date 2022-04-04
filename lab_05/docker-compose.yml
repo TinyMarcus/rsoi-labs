@@ -1,0 +1,99 @@
+version: "3.7"
+services:
+  # postgres:
+  #   image: library/postgres:13
+  #   container_name: postgres
+  #   restart: on-failure
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: "postgres"
+  #     POSTGRES_DB: postgres
+  #   volumes:
+  #     - ./postgres/:/docker-entrypoint-initdb.d/
+  #     - db-data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - database-network
+
+  loyalty-service:
+    build:
+      context: ./src/Services/HotelsBookingSystem.Services.LoyaltyService
+      dockerfile: Dockerfile
+    image: ilyasov9999/loyalty-service:v1.3
+    container_name: loyalty-service
+    ports:
+      - "6060:80"
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+      # - loyalty-network
+
+  payment-service:
+    build:
+      context: ./src/Services/HotelsBookingSystem.Services.PaymentService
+      dockerfile: Dockerfile
+    image: ilyasov9999/payment-service:v1.3
+    container_name: payment-service
+    ports:
+      - "7070:80"
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+      # - payment-network
+    
+  reservation-service:
+    build:
+      context: ./src/Services/HotelsBookingSystem.Services.ReservationService
+      dockerfile: Dockerfile
+    image: ilyasov9999/reservation-service:v1.3
+    container_name: reservation-service
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+      # - reservation-network
+
+  gateway-service:
+    build:
+      context: ./src/HotelsBookingSystem.GatewayAPI
+      dockerfile: Dockerfile
+    image: ilyasov9999/gateway-service:v1.4
+    container_name: gateway-service
+    restart: on-failure
+    ports:
+      - "5050:80"
+    depends_on:
+      - reservation-service
+      - loyalty-service
+      - payment-service
+    networks:
+      - database-network
+      # - gateway-network
+      # - loyalty-network
+      # - payment-network
+      # - reservation-network
+
+networks:
+  # loyalty-network:
+  #   name: loyalty-network
+  #   driver: bridge
+  # payment-network:
+  #   name: payment-network
+  #   driver: bridge
+  # reservation-network:
+  #   name: reservation-network
+  #   driver: bridge
+  # gateway-network:
+  #   name: reservation-network
+  #   driver: bridge
+  database-network:
+    name: database-network
+    driver: bridge
+
+volumes:
+  db-data:

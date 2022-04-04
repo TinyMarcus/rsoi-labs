@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.HttpServer", "rsoi.HttpServer\rsoi.HttpServer.csproj", "{32C4B366-367D-41BF-A8EA-360504089031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{DC98CFD5-4DC2-4FA5-8B7B-21FE1583747A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Database.Models", "Database\rsoi.Database.Models\rsoi.Database.Models.csproj", "{7186A6D1-53C3-489A-B14B-1A1B67AC4362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Database.NpgsqlContext", "Database\rsoi.Database.NpgsqlContext\rsoi.Database.NpgsqlContext.csproj", "{46E21123-59DA-4DC5-A227-B8147059077F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Database.Repositories", "Database\rsoi.Database.Repositories\rsoi.Database.Repositories.csproj", "{86ADED03-AA11-468D-84E1-95545C4915F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Core", "rsoi.Core\rsoi.Core.csproj", "{45116677-26AB-439E-894A-C5078FC27A25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Dto.Http", "rsoi.Dto.Http\rsoi.Dto.Http.csproj", "{7A1190C8-8037-4633-85D4-F713605C1E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rsoi.Tests", "rsoi.Tests\rsoi.Tests.csproj", "{A6543EAC-8493-422B-9DF9-5809532EADCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32C4B366-367D-41BF-A8EA-360504089031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C4B366-367D-41BF-A8EA-360504089031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C4B366-367D-41BF-A8EA-360504089031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C4B366-367D-41BF-A8EA-360504089031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7186A6D1-53C3-489A-B14B-1A1B67AC4362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7186A6D1-53C3-489A-B14B-1A1B67AC4362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7186A6D1-53C3-489A-B14B-1A1B67AC4362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7186A6D1-53C3-489A-B14B-1A1B67AC4362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E21123-59DA-4DC5-A227-B8147059077F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E21123-59DA-4DC5-A227-B8147059077F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E21123-59DA-4DC5-A227-B8147059077F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E21123-59DA-4DC5-A227-B8147059077F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86ADED03-AA11-468D-84E1-95545C4915F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86ADED03-AA11-468D-84E1-95545C4915F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86ADED03-AA11-468D-84E1-95545C4915F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86ADED03-AA11-468D-84E1-95545C4915F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45116677-26AB-439E-894A-C5078FC27A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45116677-26AB-439E-894A-C5078FC27A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45116677-26AB-439E-894A-C5078FC27A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45116677-26AB-439E-894A-C5078FC27A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1190C8-8037-4633-85D4-F713605C1E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1190C8-8037-4633-85D4-F713605C1E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1190C8-8037-4633-85D4-F713605C1E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1190C8-8037-4633-85D4-F713605C1E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6543EAC-8493-422B-9DF9-5809532EADCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6543EAC-8493-422B-9DF9-5809532EADCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6543EAC-8493-422B-9DF9-5809532EADCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6543EAC-8493-422B-9DF9-5809532EADCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7186A6D1-53C3-489A-B14B-1A1B67AC4362} = {DC98CFD5-4DC2-4FA5-8B7B-21FE1583747A}
+		{46E21123-59DA-4DC5-A227-B8147059077F} = {DC98CFD5-4DC2-4FA5-8B7B-21FE1583747A}
+		{86ADED03-AA11-468D-84E1-95545C4915F0} = {DC98CFD5-4DC2-4FA5-8B7B-21FE1583747A}
+	EndGlobalSection
+EndGlobal
